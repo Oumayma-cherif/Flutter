@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/Models/game.dart';
 
 class HomeCell extends StatelessWidget {
-  const HomeCell({super.key});
+   final Game game;
+  const HomeCell(this.game ,{super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,19 +13,20 @@ class HomeCell extends StatelessWidget {
 
         children: [
           //1 :image
-          Image.asset("assets/images/dmc5.jpg" ,width: MediaQuery.of(context).size.width * 0.5,),
+          Image.asset("assets/images/${game.image}"
+           ,width: MediaQuery.of(context).size.width * 0.5,),
           //2 : Colum
-       const Padding(
-          padding:  EdgeInsets.only(right:10.0 ),
+        Padding(
+          padding:  const EdgeInsets.only(right:10.0 ),
           child:  Column(
          
                crossAxisAlignment: CrossAxisAlignment.start,
            
               children:  [
               //1: game name 
-              Text("Devils My Cry  5 "),
+              Text(game.name),
               //2  / game price  
-              Text ("200 TND",style: TextStyle(fontSize:20 ,fontWeight: FontWeight.bold ),),
+              Text ("${game.price} TND", style:  const TextStyle(fontSize:20 ,fontWeight: FontWeight.bold ),),
             
               ],
             ),
