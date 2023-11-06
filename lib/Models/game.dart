@@ -1,11 +1,11 @@
 class Game {
     //var 
     final String name , image ;
-    final price ;
+    final  int price ;
     //constructeur 
-    const Game (this ,name );
+    const Game (this.name , this.image ,this.price );
 
 
 
     
-//}
+}
